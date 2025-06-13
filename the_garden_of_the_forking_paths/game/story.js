@@ -318,8 +318,8 @@ const storyNodes = {
         type: 'forest',
         timeDistortion: true,
         exits: {
-            up: 'clearing',
-            down: 'tower_base'
+            down: 'clearing',
+            up: 'tower_base'
         }
     },
     

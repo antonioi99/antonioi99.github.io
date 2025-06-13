@@ -313,6 +313,101 @@ main {
     font-size: 0.9rem;
 }
 
+
+/* DISPLAY HISTORY */
+.story-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.story-modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    height: 85%;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 5px;
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.story-content {
+    white-space: pre-wrap;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    color: #333;
+}
+
+.story-content h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.story-content h2 {
+    color: #34495e;
+    margin-top: 30px;
+}
+
+.story-content h3 {
+    color: #7f8c8d;
+}
+
+.story-content h4 {
+    color: #95a5a6;
+}
+
+/* Style for the plot button */
+#plot {
+    padding: 0.4rem 0.8rem;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#plot:hover {
+    background-color: #219150;
+}
+
+/* #plot:active {
+    transform: translateY(0);
+} */
+
+.read-plot {
+    border-left: 3px solid #ea16a0;
+    padding-left: 1rem;
+}
+
+
 /* Find Node */
 .find-node {
     border-left: 3px solid #27ae60;

@@ -205,7 +205,7 @@ function updatePlayerPosition() {
 // Animate player movement
 function animatePlayerMovement(direction, callback) {
     // Define movement amount
-    const moveAmount = 20;
+    const moveAmount = 10;
 
     const fromX = gameState.playerPosition.x;
     const fromY = gameState.playerPosition.y;
