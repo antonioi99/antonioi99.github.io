@@ -15,3 +15,5 @@ si dovev
 check the distances V
 migliorare grafica
 alternative choices/freccette V
+
+mostra il testo poco alla volta... typewriter
