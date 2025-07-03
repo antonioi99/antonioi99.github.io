@@ -229,7 +229,7 @@ function animatePlayerMovement(direction, callback) {
     // drawPathLine(fromX, fromY, gameState.playerPosition.x, gameState.playerPosition.y);
 
     // Leave a breadcrumb at the OLD position before moving
-    leaveBreadcrumb(fromX, fromY);
+    // leaveBreadcrumb(fromX, fromY);
     
     // Update player position
     playerElement.style.left = `${gameState.playerPosition.x}%`;
@@ -242,93 +242,75 @@ function animatePlayerMovement(direction, callback) {
 
 
 // Function to leave a breadcrumb dot at the current position
-function leaveBreadcrumb(x, y) {
-    const container = document.getElementById('path-container'); // Same container as the path lines
-    const currentNode = storyNodes[gameState.currentNodeId];
+// function leaveBreadcrumb(x, y) {
+//     const container = document.getElementById('path-container'); // Same container as the path lines
+//     const currentNode = storyNodes[gameState.currentNodeId];
     
-    // Create a new dot element
-    const breadcrumb = document.createElement('div');
-    breadcrumb.classList.add('breadcrumb-dot');
+//     // Create a new dot element
+//     const breadcrumb = document.createElement('div');
+//     breadcrumb.classList.add('breadcrumb-dot');
 
-    const colors = getColorsFromCSS(currentNode.type);
-    breadcrumb.style.backgroundColor = colors.breadcrumb;
-    breadcrumb.style.borderColor = colors.breadcrumb;
+//     const colors = getColorsFromCSS(currentNode.type);
+//     breadcrumb.style.backgroundColor = colors.breadcrumb;
+//     breadcrumb.style.borderColor = colors.breadcrumb;
     
-    // Position the breadcrumb at the specified coordinates
-    breadcrumb.style.left = `${x}%`;
-    breadcrumb.style.top = `${y}%`;
+//     // Position the breadcrumb at the specified coordinates
+//     breadcrumb.style.left = `${x}%`;
+//     breadcrumb.style.top = `${y}%`;
     
-    // Add it to the container
-    container.appendChild(breadcrumb);
-}
-
-// Function to read colors from CSS custom properties
-// function getColorsFromCSS() {
-//     const root = document.documentElement;
-//     const computedStyle = getComputedStyle(root);
-    
-//     return {
-//         intro: computedStyle.getPropertyValue('--intro-color').trim(),
-//         library: computedStyle.getPropertyValue('--library-color').trim(),
-//         garden: computedStyle.getPropertyValue('--garden-color').trim(),
-//         forest: computedStyle.getPropertyValue('--forest-color').trim(),
-//         village: computedStyle.getPropertyValue('--village-color').trim(),
-//         tower: computedStyle.getPropertyValue('--tower-color').trim(),
-//         mirror: computedStyle.getPropertyValue('--mirror-color').trim(),
-//         station: computedStyle.getPropertyValue('--station-color').trim(),
-//         default: computedStyle.getPropertyValue('--default-color').trim()
-//     };
-// };
+//     // Add it to the container
+//     container.appendChild(breadcrumb);
+// }
 
 
 function getColorsFromCSS(nodeType) {
     console.log('Getting colors for node type:', nodeType);
     
     const root = document.documentElement;
-    const computedStyle = getComputedStyle(root);
+    // const computedStyle = getComputedStyle(root);
     
     // Get the base color for this node type
     let baseColor;
     let cssVarName;
     
-    switch(nodeType) {
-        case 'intro':
-            cssVarName = '--intro-color';
-            baseColor = computedStyle.getPropertyValue('--intro-color').trim();
-            break;
-        case 'library':
-            cssVarName = '--library-color';
-            baseColor = computedStyle.getPropertyValue('--library-color').trim();
-            break;
-        case 'garden':
-            cssVarName = '--garden-color';
-            baseColor = computedStyle.getPropertyValue('--garden-color').trim();
-            break;
-        case 'forest':
-            cssVarName = '--forest-color';
-            baseColor = computedStyle.getPropertyValue('--forest-color').trim();
-            break;
-        case 'village':
-            cssVarName = '--village-color';
-            baseColor = computedStyle.getPropertyValue('--village-color').trim();
-            break;
-        case 'tower':
-            cssVarName = '--tower-color';
-            baseColor = computedStyle.getPropertyValue('--tower-color').trim();
-            break;
-        case 'mirror':
-            cssVarName = '--mirror-color';
-            baseColor = computedStyle.getPropertyValue('--mirror-color').trim();
-            break;
-        case 'station':
-            cssVarName = '--station-color';
-            baseColor = computedStyle.getPropertyValue('--station-color').trim();
-            break;
-        default:
-            cssVarName = '--default-color';
-            baseColor = computedStyle.getPropertyValue('--default-color').trim();
-            break;
-    }
+    // switch(nodeType) {
+    //     case 'intro':
+    //         cssVarName = '--intro-color';
+    //         baseColor = computedStyle.getPropertyValue('--intro-color').trim();
+    //         break;
+    //     case 'library':
+    //         cssVarName = '--library-color';
+    //         baseColor = computedStyle.getPropertyValue('--library-color').trim();
+    //         break;
+    //     case 'garden':
+    //         cssVarName = '--garden-color';
+    //         baseColor = computedStyle.getPropertyValue('--garden-color').trim();
+    //         break;
+    //     case 'forest':
+    //         cssVarName = '--forest-color';
+    //         baseColor = computedStyle.getPropertyValue('--forest-color').trim();
+    //         break;
+    //     case 'village':
+    //         cssVarName = '--village-color';
+    //         baseColor = computedStyle.getPropertyValue('--village-color').trim();
+    //         break;
+    //     case 'tower':
+    //         cssVarName = '--tower-color';
+    //         baseColor = computedStyle.getPropertyValue('--tower-color').trim();
+    //         break;
+    //     case 'mirror':
+    //         cssVarName = '--mirror-color';
+    //         baseColor = computedStyle.getPropertyValue('--mirror-color').trim();
+    //         break;
+    //     case 'station':
+    //         cssVarName = '--station-color';
+    //         baseColor = computedStyle.getPropertyValue('--station-color').trim();
+    //         break;
+    //     default:
+    //         cssVarName = '--default-color';
+    //         baseColor = computedStyle.getPropertyValue('--default-color').trim();
+    //         break;
+    // }
     
     console.log(`CSS variable ${cssVarName} = "${baseColor}"`);
     
@@ -347,38 +329,6 @@ function getColorsFromCSS(nodeType) {
     return result;
 }
 
-
-// function drawPathLine(x1, y1, x2, y2) {
-//     const container = document.getElementById('path-container');
-
-//     const line = document.createElement('div');
-//     line.classList.add('path-line');
-
-//     const displayWidth = labyrinthDisplay.offsetWidth;
-//     const displayHeight = labyrinthDisplay.offsetHeight;
-
-//     // Convert % positions to px
-//     const startX = (x1 / 100) * displayWidth+12;
-//     const startY = ((y1 / 100) * displayHeight)+5;
-//     const endX = (x2 / 100) * displayWidth+12;
-//     const endY = (y2 / 100) * displayHeight+5;
-
-//     const deltaX = endX - startX;
-//     const deltaY = endY - startY;
-//     const length = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-//     const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-
-//     line.style.width = `${length}px`;
-//     line.style.height = `8px`; // thickness of the path
-//     line.style.left = `${startX}px`;
-//     line.style.top = `${startY}px`;
-//     line.style.transform = `rotate(${angle}deg)`;
-
-//     container.appendChild(line);
-// }
-
-// Progression Bar
-// Add this to your existing game.js file
 
 class ProgressionSystem {
     constructor() {

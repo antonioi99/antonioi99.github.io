@@ -127,10 +127,13 @@ main {
 
 .map-container {
     display: flex;
+    max-height: 600px; /* Adjust based on your header/footer height */
     gap: 1rem;
     width: 100%;
-    max-width: 1800px;
+    max-width: 1600px;
     margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Important: include padding in width calculation */
 }
 
 /* Visualization Panel */
